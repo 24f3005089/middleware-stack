@@ -90,6 +90,6 @@ app.add_middleware(RequestContextMiddleware)
 @app.get("/ping")
 async def ping(request: Request):
     return {
-        "email": "YOUR_EMAIL@example.com",
+        "email": "24f3005089@ds.study.iitm.ac.in",
         "request_id": request.state.request_id,
     }
