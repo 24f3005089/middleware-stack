@@ -20,7 +20,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origin_regex="https://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -93,3 +93,7 @@ async def ping(request: Request):
         "email": "24f3005089@ds.study.iitm.ac.in",
         "request_id": request.state.request_id,
     }
+
+@app.get("/")
+def root():
+    return {"status": "ok"}
